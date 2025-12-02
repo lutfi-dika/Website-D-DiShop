@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import logo from "../assets/logo.png"
 import "../styles/PromoPopup.css";
 
 function PromoPopup() {
@@ -20,13 +21,13 @@ function PromoPopup() {
                 <button className="promo-close" onClick={() => setShow(false)}>×</button>
 
                 <img
-                    src="https://via.placeholder.com/300x150?text=Promo+Diskon"
+                    src={logo}
                     alt="promo"
                     className="promo-img"
                 />
 
-                <h2 className="promo-title">Promo Spesial Hari Ini!</h2>
-                <p className="promo-desc">Dapatkan diskon 30% untuk semua produk.</p>
+                <h2 className="promo-title">Selamat Datang di D&DiShop </h2>
+                <p className="promo-desc">Kami menyediakan makanan dan minuman berkualitas dengan harga terjangkau.</p>
             </div>
         </div>
     );
