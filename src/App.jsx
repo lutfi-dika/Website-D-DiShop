@@ -10,6 +10,9 @@ import HalamanPesan from "./pages/HalamanPesan";
 import Footer from "./component/Footer";
 import LoadingScreen from "./component/LoadingScreen";
 import PromoPopup from "./component/PromoPopup";
+import ProfessionalBanner from "./component/Banner";
+import Banner from "./component/BannerProfesional";
+import ChatNotif from "./component/ChatNotif";
 import "./App.css";
 
 function App() {
@@ -64,6 +67,13 @@ function App() {
         <>
           <HeroSection language={language} />
 
+          <Banner
+            title="Selamat Datang di Toko Kami"
+            subtitle="Cicipi menu terbaru dengan diskon 20% — hanya minggu ini"
+            ctaText="Dapatkan Diskon"
+            onCta={() => window.location.href = '/produk'}
+          />
+
           <div id="Produk" ref={produkRef}>
             <ProdukSection
               language={language}
@@ -86,6 +96,15 @@ function App() {
       {page === "pesan" && (
         <HalamanPesan language={language} selectedProduk={selectedProduk} />
       )}
+
+      <ProfessionalBanner
+        title="Selamat Datang di Toko Kami"
+        subtitle="Cicipi menu terbaru dengan diskon 20% — hanya minggu ini"
+        ctaText="Dapatkan Diskon"
+        onCta={() => window.location.href = '/order'}
+      />
+
+      <ChatNotif />
 
       <Footer language={language} />
     </>

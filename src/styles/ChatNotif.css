@@ -1,0 +1,91 @@
+.chatnotif-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* Floating Button */
+.chatnotif-button {
+  background: #ff3b3b;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
+}
+
+.chatnotif-button:hover {
+  transform: scale(1.1);
+}
+
+/* Chat Box */
+.chatnotif-box {
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Header */
+.chatnotif-header {
+  background: #ff3b3b;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatnotif-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Body */
+.chatnotif-body {
+  padding: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+/* Bubble */
+.chatnotif-msg {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.chatnotif-msg.bot p {
+  background: #f1f1f1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  max-width: 85%;
+}
+
+/* Animasi tiap bubble muncul */
+.fade-in {
+  animation: bubbleFade 0.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes bubbleFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
