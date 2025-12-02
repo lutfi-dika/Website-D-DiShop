@@ -1,0 +1,83 @@
+/* Footer CSS: Footer.css */
+.footer {
+  margin-top: 5%;
+  width: 100%;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  padding: 40px 24px;
+  font-family: "Arial", sans-serif;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 15px;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #28c76f;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.footer-social a:hover {
+  background-color: #28c76f;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

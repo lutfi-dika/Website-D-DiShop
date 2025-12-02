@@ -1,0 +1,94 @@
+.contact-section {
+    margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.contact-card {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Gambar full lebar */
+.contact-image {
+  flex: 1;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+
+/* Form biar full lebar sama seperti gambar */
+.contact-form {
+  flex: 1;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+}
+
+/* Input dan textarea full width */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact-form .actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff7f50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contact-form button:hover {
+  background-color: #ff6333;
+}
+
+.form-success {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    height: 250px;
+  }
+
+  .contact-image img {
+    height: 100%;
+  }
+}
