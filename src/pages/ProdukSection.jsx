@@ -3,29 +3,29 @@ import "../styles/ProdukSection.css";
 
 const allProduk = [
     // makanan
-    { name: "Nasi + Ayam Penyet + Tempe", price: "Rp 25.000", category: "Makanan" },
-    { name: "Nasi + Ayam Bakar + Tempe + Tahu", price: "Rp 25.000", category: "Makanan" },
-    { name: "Nasi + Ayam Geprek + Tempe + Tahu", price: "Rp 25.000", category: "Makanan" },
-    { name: "Nasi Bakar", price: "Rp 25.000", category: "Makanan" },
-    { name: "Nasi Bakar Cumi", price: "Rp 25.000", category: "Makanan" },
-    { name: "Nasi Bakar Jamur", price: "Rp 25.000", category: "Makanan" },
-    { name: "Nasi Bakar Ayam", price: "Rp 25.000", category: "Makanan" },
-    { name: "Telor Balado", price: "Rp 5.000", category: "Makanan" },
+    { name: "Nasi + Ayam Penyet + Tempe", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    { name: "Nasi + Ayam Bakar + Tempe + Tahu", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    { name: "Nasi + Ayam Geprek + Tempe + Tahu", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    { name: "Nasi Bakar", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    { name: "Nasi Bakar Cumi", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia"},
+    { name: "Nasi Bakar Jamur", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    { name: "Nasi Bakar Ayam", price: "Rp 25.000", category: "Makanan",  status:"Belum Tersedia"},
+    { name: "Telor Balado", price: "Rp 5.000", category: "Makanan", status:"Belum Tersedia" },
 
     // minuman
-    { name: "Matacha Latte", price: "Rp 10.000", category: "Minuman" },
-    { name: "Coklat Latte", price: "Rp 10.000", category: "Minuman" },
-    { name: "Kopi Gula Aren", price: "Rp 10.000", category: "Minuman" },
-    { name: "Thai Tea", price: "Rp 10.000", category: "Minuman" },
+    { name: "Matacha Latte", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
+    { name: "Coklat Latte", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
+    { name: "Kopi Gula Aren", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
+    { name: "Thai Tea", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
 
     // snack
-    { name: "Panada", price: "Rp 8.000", category: "Snack" },
-    { name: "Pastel", price: "Rp 3.000", category: "Snack" },
-    { name: "Pizza", price: "Rp 90.000", category: "Snack" },
-    { name: "Makaroni Panggang", price: "Rp 15.000", category: "Snack" },
-    { name: "Nastar", price: "Rp 110.000", category: "Snack" },
-    { name: "Kastengel", price: "Rp 110.000", category: "Snack" },
-    { name: "Putri Salju", price: "Rp 110.000", category: "Snack" },
+    { name: "Panada", price: "Rp 8.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Pastel", price: "Rp 3.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Pizza", price: "Rp 90.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Makaroni Panggang", price: "Rp 15.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Nastar", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Kastengel", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Putri Salju", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
 ];
 
 export default function ProdukSection({ language, setPage, setSelectedProduk }) {
@@ -107,7 +107,7 @@ export default function ProdukSection({ language, setPage, setSelectedProduk }) 
                 {filteredProduk.map((produk) => (
                     <div key={produk.name} className="product-card">
                         <div className="product-img"></div>
-                        <h4>{produk.name}</h4>
+                        <h4>{produk.name} {produk.status}</h4>
                         <p className="price">{produk.price}</p>
                         <button className="btn-order" onClick={() => handleOrder(produk)}>
                             {text[language].order}
