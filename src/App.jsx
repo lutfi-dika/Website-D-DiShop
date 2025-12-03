@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+
 import Navbar from "./component/Navbar";
 import HeroSection from "./pages/HeroSection";
 import ProdukSection from "./pages/ProdukSection";
@@ -8,18 +9,21 @@ import AboutNews from "./pages/AboutSection";
 import ContactForm from "./pages/ContactForm";
 import HalamanPesan from "./pages/HalamanPesan";
 import Footer from "./component/Footer";
+
 import LoadingScreen from "./component/LoadingScreen";
 import PromoPopup from "./component/PromoPopup";
 import ProfessionalBanner from "./component/Banner";
-import Banner from "./component/BannerProfesional";
 import ChatNotif from "./component/ChatNotif";
+
+
+// gambar
+import logobanner from "./assets/logo.png"
+
 import "./App.css";
 
 function App() {
   const [page, setPage] = useState("home");
   const [loading, setLoading] = useState(true);
-
-  // Bahasa global (ID/EN)
   const [language, setLanguage] = useState("id");
 
   const [selectedProduk, setSelectedProduk] = useState({
@@ -29,11 +33,9 @@ function App() {
 
   const produkRef = useRef(null);
 
-  // Loading screen 1.5 detik
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+    const t = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(t);
   }, []);
 
   const scrollToProduk = () => {
@@ -51,7 +53,7 @@ function App() {
       {/* Loading */}
       {loading && <LoadingScreen />}
 
-      {/* Promo popup */}
+      {/* Promo */}
       {!loading && <PromoPopup language={language} />}
 
       {/* Navbar */}
@@ -62,18 +64,34 @@ function App() {
         setLanguage={setLanguage}
       />
 
-      {/* Halaman dinamis */}
+      {/* === Halaman Home === */}
       {page === "home" && (
         <>
+          {/* Hero Section */}
           <HeroSection language={language} />
 
-          <Banner
-            title="Selamat Datang di Toko Kami"
-            subtitle="Cicipi menu terbaru dengan diskon 20% — hanya minggu ini"
-            ctaText="Dapatkan Diskon"
-            onCta={() => window.location.href = '/produk'}
+          {/* BANNER ATAS */}
+          <ProfessionalBanner
+            language={language}
+            image={logobanner}
+            text={{
+              id: {
+                eyebrow: "D&DiShop",
+                title: "Selamat Datang Di Website Kami",
+                subtitle: "Nikmati makanan lezat harga lebih murah!",
+                cta: "Cicipi Sekarang"
+              },
+              en: {
+                eyebrow: "D&DiShop",
+                title: "Welcome to our website",
+                subtitle: "Enjoy delicious food at cheaper prices!",
+                cta: "Taste Now"
+              },
+            }}
+            onCta={() => alert("Promo diklik")}
           />
 
+          {/* Produk */}
           <div id="Produk" ref={produkRef}>
             <ProdukSection
               language={language}
@@ -82,10 +100,32 @@ function App() {
             />
           </div>
 
+          {/* Produk Scroll */}
           <ProdukScroll
             language={language}
             setSelectedProduk={setSelectedProduk}
             setPage={setPage}
+          />
+
+          {/* BANNER BAWAH */}
+          <ProfessionalBanner
+            language={language}
+            // image={bannerBottom}
+            text={{
+              id: {
+                eyebrow: "D&DiShop",
+                title: "Jumat Berkah!",
+                subtitle: "Dapatkan promo Beli 1 Gratis 1, cuma berlaku hari di hari jum'at",
+                cta: "Cicipi Sekarang"
+              },
+              en: {
+                eyebrow: "D&DiShop",
+                title: "Blessed Friday!",
+                subtitle: "Get a Buy 1 Get 1 Free promo, valid only on Fridays",
+                cta: "taste it now"
+              },
+            }}
+            onCta={() => alert("Minuman diklik")}
           />
         </>
       )}
@@ -97,15 +137,7 @@ function App() {
         <HalamanPesan language={language} selectedProduk={selectedProduk} />
       )}
 
-      <ProfessionalBanner
-        title="Selamat Datang di Toko Kami"
-        subtitle="Cicipi menu terbaru dengan diskon 20% — hanya minggu ini"
-        ctaText="Dapatkan Diskon"
-        onCta={() => window.location.href = '/order'}
-      />
-
       <ChatNotif />
-
       <Footer language={language} />
     </>
   );
