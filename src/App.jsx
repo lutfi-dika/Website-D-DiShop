@@ -15,9 +15,12 @@ import PromoPopup from "./component/PromoPopup";
 import ProfessionalBanner from "./component/Banner";
 import ChatNotif from "./component/ChatNotif";
 
+// LOGIN & REGISTER (folder sudah dirapikan)
+import Login from "./login&regis/Login";
+import Register from "./login&regis/Register";
 
 // gambar
-import logobanner from "./assets/logo.png"
+import logobanner from "./assets/logo.png";
 
 import "./App.css";
 
@@ -33,11 +36,13 @@ function App() {
 
   const produkRef = useRef(null);
 
+  // loading animation
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(t);
   }, []);
 
+  // scroll ke bagian produk
   const scrollToProduk = () => {
     setPage("home");
 
@@ -50,13 +55,9 @@ function App() {
 
   return (
     <>
-      {/* Loading */}
       {loading && <LoadingScreen />}
-
-      {/* Promo */}
       {!loading && <PromoPopup language={language} />}
 
-      {/* Navbar */}
       <Navbar
         scrollToProduk={scrollToProduk}
         setPage={setPage}
@@ -64,13 +65,12 @@ function App() {
         setLanguage={setLanguage}
       />
 
-      {/* === Halaman Home === */}
+      {/* ================= Halaman HOME ================= */}
       {page === "home" && (
         <>
-          {/* Hero Section */}
           <HeroSection language={language} />
 
-          {/* BANNER ATAS */}
+          {/* Banner atas */}
           <ProfessionalBanner
             language={language}
             image={logobanner}
@@ -79,13 +79,13 @@ function App() {
                 eyebrow: "D&DiShop",
                 title: "Selamat Datang Di Website Kami",
                 subtitle: "Nikmati makanan lezat harga lebih murah!",
-                cta: "Cicipi Sekarang"
+                cta: "Cicipi Sekarang",
               },
               en: {
                 eyebrow: "D&DiShop",
                 title: "Welcome to our website",
                 subtitle: "Enjoy delicious food at cheaper prices!",
-                cta: "Taste Now"
+                cta: "Taste Now",
               },
             }}
             onCta={() => alert("Promo diklik")}
@@ -107,22 +107,22 @@ function App() {
             setPage={setPage}
           />
 
-          {/* BANNER BAWAH */}
+          {/* Banner bawah */}
           <ProfessionalBanner
             language={language}
-            // image={bannerBottom}
             text={{
               id: {
                 eyebrow: "D&DiShop",
                 title: "Jumat Berkah!",
-                subtitle: "Dapatkan promo Beli 1 Gratis 1, cuma berlaku hari di hari jum'at",
-                cta: "Cicipi Sekarang"
+                subtitle:
+                  "Dapatkan promo Beli 1 Gratis 1, cuma berlaku hari jum'at",
+                cta: "Cicipi Sekarang",
               },
               en: {
                 eyebrow: "D&DiShop",
                 title: "Blessed Friday!",
-                subtitle: "Get a Buy 1 Get 1 Free promo, valid only on Fridays",
-                cta: "taste it now"
+                subtitle: "Buy 1 Get 1 Free promo, valid only on Fridays",
+                cta: "Taste it now",
               },
             }}
             onCta={() => alert("Minuman diklik")}
@@ -130,11 +130,15 @@ function App() {
         </>
       )}
 
+      {/* ================= Halaman Lain ================= */}
+
+      {page === "login" && <Login setPage={setPage} />}
+      {page === "register" && <Register setPage={setPage} />}
       {page === "category" && <CategorySection language={language} />}
       {page === "tentang" && <AboutNews language={language} />}
       {page === "kontak" && <ContactForm language={language} />}
       {page === "pesan" && (
-        <HalamanPesan language={language} selectedProduk={selectedProduk} />
+        <HalamanPesan selectedProduk={selectedProduk} language={language} />
       )}
 
       <ChatNotif />

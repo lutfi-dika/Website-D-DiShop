@@ -142,6 +142,31 @@
   transform: scale(0.97);
 }
 
+/* NEXT PRODUK */
+.next-produk {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.next-produk a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff4b2b;
+  border: 2px solid #ff4b2b;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.next-produk a:hover {
+  background: #ff4b2b;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .product-grid {

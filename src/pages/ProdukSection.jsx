@@ -3,29 +3,29 @@ import "../styles/ProdukSection.css";
 
 const allProduk = [
     // makanan
-    { name: "Nasi + Ayam Penyet + Tempe", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
-    { name: "Nasi + Ayam Bakar + Tempe + Tahu", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
-    { name: "Nasi + Ayam Geprek + Tempe + Tahu", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
-    { name: "Nasi Bakar", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
-    { name: "Nasi Bakar Cumi", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia"},
-    { name: "Nasi Bakar Jamur", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
-    { name: "Nasi Bakar Ayam", price: "Rp 25.000", category: "Makanan",  status:"Belum Tersedia"},
-    { name: "Telor Balado", price: "Rp 5.000", category: "Makanan", status:"Belum Tersedia" },
+    { name: "Nasi + Ayam Penyet + Tempe", price: "Rp 25.000", category: "Makanan", status: "Belum Tersedia" },
+    { name: "Nasi + Ayam Bakar + Tempe + Tahu", price: "Rp 25.000", category: "Makanan", status: "Belum Tersedia" },
+    { name: "Nasi + Ayam Geprek + Tempe + Tahu", price: "Rp 25.000", category: "Makanan", status: "Belum Tersedia" },
+    // { name: "Nasi Bakar", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    // { name: "Nasi Bakar Cumi", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia"},
+    // { name: "Nasi Bakar Jamur", price: "Rp 25.000", category: "Makanan", status:"Belum Tersedia" },
+    // { name: "Nasi Bakar Ayam", price: "Rp 25.000", category: "Makanan",  status:"Belum Tersedia"},
+    // { name: "Telor Balado", price: "Rp 5.000", category: "Makanan", status:"Belum Tersedia" },
 
     // minuman
-    { name: "Matacha Latte", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
-    { name: "Coklat Latte", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
-    { name: "Kopi Gula Aren", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
-    { name: "Thai Tea", price: "Rp 10.000", category: "Minuman", status:"Belum Tersedia" },
+    { name: "Matacha Latte", price: "Rp 10.000", category: "Minuman", status: "Belum Tersedia" },
+    { name: "Coklat Latte", price: "Rp 10.000", category: "Minuman", status: "Belum Tersedia" },
+    { name: "Kopi Gula Aren", price: "Rp 10.000", category: "Minuman", status: "Belum Tersedia" },
+    { name: "Thai Tea", price: "Rp 10.000", category: "Minuman", status: "Belum Tersedia" },
 
     // snack
-    { name: "Panada", price: "Rp 8.000", category: "Snack", status:"Belum Tersedia" },
-    { name: "Pastel", price: "Rp 3.000", category: "Snack", status:"Belum Tersedia" },
-    { name: "Pizza", price: "Rp 90.000", category: "Snack", status:"Belum Tersedia" },
-    { name: "Makaroni Panggang", price: "Rp 15.000", category: "Snack", status:"Belum Tersedia" },
-    { name: "Nastar", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
-    { name: "Kastengel", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
-    { name: "Putri Salju", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
+    { name: "Panada", price: "Rp 8.000", category: "Snack", status: "Belum Tersedia" },
+    { name: "Pastel", price: "Rp 3.000", category: "Snack", status: "Belum Tersedia" },
+    { name: "Pizza", price: "Rp 90.000", category: "Snack", status: "Belum Tersedia" },
+    // { name: "Makaroni Panggang", price: "Rp 15.000", category: "Snack", status:"Belum Tersedia" },
+    // { name: "Nastar", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
+    // { name: "Kastengel", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
+    // { name: "Putri Salju", price: "Rp 110.000", category: "Snack", status:"Belum Tersedia" },
 ];
 
 export default function ProdukSection({ language, setPage, setSelectedProduk }) {
@@ -115,6 +115,11 @@ export default function ProdukSection({ language, setPage, setSelectedProduk }) 
                     </div>
                 ))}
             </div>
+
+            <div className="next-produk">
+                <a href="https://wa.me/c/6285187945635" target="_blank">Lihat Produk Selengkapnya →</a>
+            </div>
+
         </div>
     );
 }

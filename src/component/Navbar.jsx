@@ -12,7 +12,9 @@ const Navbar = ({ setPage, scrollToProduk, language, setLanguage }) => {
         category: language === "id" ? "Kategori" : "Category",
         tentang: language === "id" ? "Tentang Kami" : "About Us",
         kontak: language === "id" ? "Kontak" : "Contact",
-        search: language === "id" ? "Cari produk..." : "Search product...",
+        login: language === "id" ? "Masuk" : "Login",
+        register: language === "id" ? "Daftar" : "Register",
+        search: language === "id" ? "Cari produk..." : "Search products...",
     };
 
     const handlePageChange = (page) => {
@@ -75,6 +77,7 @@ const Navbar = ({ setPage, scrollToProduk, language, setLanguage }) => {
                             {text.kontak}
                         </button>
                     </li>
+
                 </ul>
 
                 {/* Right Menu */}
@@ -123,6 +126,8 @@ const Navbar = ({ setPage, scrollToProduk, language, setLanguage }) => {
                     <button onClick={() => handlePageChange("category")}>{text.category}</button>
                     <button onClick={() => handlePageChange("tentang")}>{text.tentang}</button>
                     <button onClick={() => handlePageChange("kontak")}>{text.kontak}</button>
+
+
 
                     {/* Bahasa toggle di mobile */}
                     <select

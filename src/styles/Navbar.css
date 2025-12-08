@@ -1,4 +1,6 @@
-/* Navbar.css */
+/* ============================
+   NAVBAR STYLE
+============================ */
 .navbar {
   width: 100%;
   background: #ffffff;
@@ -15,12 +17,16 @@
   box-sizing: border-box;
 }
 
+/* LOGO */
 .logo {
   font-size: 22px;
   font-weight: bold;
   color: #24a148;
 }
 
+/* ============================
+   DESKTOP MENU
+============================ */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -36,17 +42,25 @@
   transition: 0.3s;
 }
 
-.nav-links button,
-.nav-links button.active {
+.nav-links button:hover {
   color: #24a148;
 }
 
+.nav-links button.active {
+  color: #24a148;
+  font-weight: bold;
+}
+
+/* ============================
+   SEARCH, CART, LANGUAGE & MENU
+============================ */
 .right-menu {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* SEARCH BOX */
 .search-box {
   padding: 5px 10px;
   border: 1px solid #ccc;
@@ -55,10 +69,11 @@
   transition: 0.3s;
 }
 
-.search-box {
+.search-box:focus {
   border-color: #24a148;
 }
 
+/* CART */
 .cart {
   position: relative;
   font-size: 20px;
@@ -76,6 +91,7 @@
   font-size: 12px;
 }
 
+/* MENU BUTTON (MOBILE ONLY) */
 .menu-btn {
   display: none;
   font-size: 28px;
@@ -84,7 +100,43 @@
   position: relative;
 }
 
-/* MOBILE OVERLAY  */
+/* ============================
+   AUTH BUTTONS (LOGIN / REGISTER)
+============================ */
+.auth-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  background: transparent;
+  color: #24a148;
+  border: 1px solid #24a148;
+}
+
+.login-btn:hover {
+  background: #24a148;
+  color: white;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+  background: #24a148;
+  color: white;
+}
+
+.register-btn:hover {
+  opacity: 0.85;
+}
+
+/* ============================
+   MOBILE OVERLAY
+============================ */
 .mobile-overlay {
   position: fixed;
   top: 0;
@@ -104,7 +156,9 @@
   pointer-events: auto;
 }
 
-/* MOBILE MENU  */
+/* ============================
+   MOBILE MENU
+============================ */
 .mobile-menu {
   display: flex;
   flex-direction: column;
@@ -122,20 +176,45 @@
   transition: 0.3s;
 }
 
-.mobile-menu button,
-.mobile-menu button.active {
+.mobile-menu button:hover {
   color: #24a148;
 }
 
+.mobile-menu button.active {
+  color: #24a148;
+  font-weight: bold;
+}
+
+/* Mobile Auth Buttons */
+.mobile-menu .login-btn,
+.mobile-menu .register-btn {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* LANGUAGE DROPDOWN MOBILE */
+.lang-select-mobile {
+  margin-top: 20px;
+  padding: 7px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
+
   .search-box {
     display: none;
   }
+
   .menu-btn {
     display: block;
   }
 }
-
