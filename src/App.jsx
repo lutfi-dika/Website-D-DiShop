@@ -15,9 +15,6 @@ import PromoPopup from "./component/PromoPopup";
 import ProfessionalBanner from "./component/Banner";
 import ChatNotif from "./component/ChatNotif";
 
-// LOGIN & REGISTER (folder sudah dirapikan)
-import Login from "./login&regis/Login";
-import Register from "./login&regis/Register";
 
 // gambar
 import logobanner from "./assets/logo.png";
