@@ -6,7 +6,7 @@ const HalamanPesan = ({ selectedProduk, setPage }) => {
     const [nomor, setNomor] = useState(""); // ⬅️ tambahan nomor HP
     const [catatan, setCatatan] = useState("");
 
-    const adminWA = "6285141541661";
+    const adminWA = "085187945635";
 
     const kirimWhatsApp = () => {
         const pesan = `
