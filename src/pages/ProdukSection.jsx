@@ -117,8 +117,16 @@ export default function ProdukSection({ language, setPage, setSelectedProduk }) 
             </div>
 
             <div className="next-produk">
-                <a href="https://wa.me/c/6285187945635" target="_blank">Lihat Produk Selengkapnya →</a>
+                <a
+                    href="https://wa.me/c/6285187945635"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="next-produk-link"
+                >
+                    Lihat Produk Selengkapnya →
+                </a>
             </div>
+
 
         </div>
     );

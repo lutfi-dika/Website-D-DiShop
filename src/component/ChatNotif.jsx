@@ -5,12 +5,16 @@ export default function ChatNotif() {
     const [open, setOpen] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
 
-    // 🔥 Tinggal isi array ini saja
+    // 🔥 Tinggal isi isiannya saja
     const messages = [
         "Halo! 👋",
         "Selamat datang di D&DiShop !",
         "Kami menyediakan makanan dan minuman berkualitas dengan harga terjangkau.",
-        "Kami melayani secara online maupun offline.Untuk pembelian offline, silakan datang ke alamat: [isi alamat toko].Untuk pembelian online, cukup pilih menu yang diinginkan dan klik tombol “Pesan” atau hubungi kami melalui nomer WhatsApp ini +62 851-4154-1661.",
+        `Kami melayani secara online maupun offline.<br/>
+        Untuk pembelian offline, silakan datang ke alamat: <b>Perumahan Puri Cendana block g </b>.<br/>
+        Untuk pembelian online, cukup pilih menu yang diinginkan dan klik tombol <b>Pesan</b> 
+        atau hubungi kami melalui WhatsApp 
+        <a href="https://wa.me/c/6285187945635" target="_blank" rel="noopener noreferrer">Klik di sini</a>.`,
         "Jangan lupa order yaa!!!"
     ];
 
@@ -48,7 +52,7 @@ export default function ChatNotif() {
                     <div className="chatnotif-body">
                         {visibleMessages.map((msg, i) => (
                             <div key={i} className="chatnotif-msg bot fade-in">
-                                <p>{msg}</p>
+                                <p dangerouslySetInnerHTML={{ __html: msg }}></p>
                             </div>
                         ))}
                     </div>
