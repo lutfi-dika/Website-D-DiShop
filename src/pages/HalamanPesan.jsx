@@ -10,7 +10,8 @@ const HalamanPesan = ({ selectedProduk, setPage }) => {
     const adminWA = "6285187945635";
 
     const kirimWhatsApp = () => {
-        if (!nama || !nomor) {
+        // VALIDASI
+        if (nama.trim() === "" || nomor.trim() === "") {
             alert("Nama dan Nomor HP wajib diisi!");
             return;
         }
@@ -28,7 +29,7 @@ Terima kasih 🙏`;
 
         const url = `https://wa.me/${adminWA}?text=${encodeURIComponent(pesan)}`;
 
-        // langsung buka WA (lebih otomatis)
+        // buka wa langsung
         window.location.href = url;
     };
 
@@ -55,7 +56,7 @@ Terima kasih 🙏`;
 
                 <label className="pesan-label">Nomor HP</label>
                 <input
-                    type="number"
+                    type="text"   // FIX: jangan pakai number
                     className="pesan-input"
                     value={nomor}
                     onChange={(e) => setNomor(e.target.value)}
